@@ -3,43 +3,40 @@ import UIKit
 class MediumTableCell: UICollectionViewCell, SelfConfiguringCell {
     static let reuseIdentifier: String = "MediumTableCell"
 
-    let name = UILabel()
-    let subtitle = UILabel()
-    let imageView = UIImageView()
-    let buyButton = UIButton(type: .custom)
+    private let name = {
+        $0.font = UIFont.preferredFont(forTextStyle: .headline)
+        $0.textColor = .label
+        return $0
+    }(UILabel())
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private let subtitle = {
+        $0.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        $0.textColor = .secondaryLabel
+        return $0
+    }(UILabel())
 
-        name.font = UIFont.preferredFont(forTextStyle: .headline)
-        name.textColor = .label
+    private let imageView = {
+        $0.layer.cornerRadius = 15
+        $0.clipsToBounds = true
+        return $0
+    }(UIImageView())
 
-        subtitle.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        subtitle.textColor = .secondaryLabel
+    private let buyButton = {
+        $0.setImage(UIImage(systemName: "icloud.and.arrow.down"), for: .normal)
+        return $0
+    }(UIButton(type: .custom))
 
-        imageView.layer.cornerRadius = 15
-        imageView.clipsToBounds = true
+    private lazy var innerStackView = {
+        $0.axis = .vertical
+        return $0
+    }(UIStackView(arrangedSubviews: [name, subtitle]))
 
-        buyButton.setImage(UIImage(systemName: "icloud.and.arrow.down"), for: .normal)
-
-        imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-        buyButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-
-        let innerStackView = UIStackView(arrangedSubviews: [name, subtitle])
-        innerStackView.axis = .vertical
-
-        let outerStackView = UIStackView(arrangedSubviews: [imageView, innerStackView, buyButton])
-        outerStackView.translatesAutoresizingMaskIntoConstraints = false
-        outerStackView.alignment = .center
-        outerStackView.spacing = 10
-        contentView.addSubview(outerStackView)
-
-        NSLayoutConstraint.activate([
-            outerStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            outerStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            outerStackView.topAnchor.constraint(equalTo: contentView.topAnchor)
-        ])
-    }
+    private lazy var outerStackView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.alignment = .center
+        $0.spacing = 10
+        return $0
+    }(UIStackView(arrangedSubviews: [imageView, innerStackView, buyButton]))
 
     func configure(with app: App) {
         name.text = app.name
@@ -47,7 +44,27 @@ class MediumTableCell: UICollectionViewCell, SelfConfiguringCell {
         imageView.image = UIImage(named: app.image)
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("Just… no")
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViews()
+        setupConstraints()
+    }
+
+    required init?(coder: NSCoder) { fatalError() }
+}
+
+extension MediumTableCell {
+    private func setupViews() {
+        imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        buyButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        contentView.addSubview(outerStackView)
+    }
+
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            outerStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            outerStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            outerStackView.topAnchor.constraint(equalTo: contentView.topAnchor)
+        ])
     }
 }

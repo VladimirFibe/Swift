@@ -23,6 +23,9 @@
 		025279F02AB93C06007CEBAD /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025279E92AB93C06007CEBAD /* GamesViewController.swift */; };
 		025279F12AB93C06007CEBAD /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025279EA2AB93C06007CEBAD /* SelfConfiguringCell.swift */; };
 		025279F32AB93C11007CEBAD /* SmallTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025279F22AB93C11007CEBAD /* SmallTableCell.swift */; };
+		025279FD2AB9568E007CEBAD /* AppsViewController+Layouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025279FC2AB9568E007CEBAD /* AppsViewController+Layouts.swift */; };
+		025279FF2AB956C2007CEBAD /* AppsViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025279FE2AB956C2007CEBAD /* AppsViewController+DataSource.swift */; };
+		02527A012AB95716007CEBAD /* AppsViewController+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02527A002AB95716007CEBAD /* AppsViewController+Setup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		025279E92AB93C06007CEBAD /* GamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
 		025279EA2AB93C06007CEBAD /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
 		025279F22AB93C11007CEBAD /* SmallTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallTableCell.swift; sourceTree = "<group>"; };
+		025279FC2AB9568E007CEBAD /* AppsViewController+Layouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppsViewController+Layouts.swift"; sourceTree = "<group>"; };
+		025279FE2AB956C2007CEBAD /* AppsViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppsViewController+DataSource.swift"; sourceTree = "<group>"; };
+		02527A002AB95716007CEBAD /* AppsViewController+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppsViewController+Setup.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,9 @@
 			children = (
 				025279FB2AB93DB4007CEBAD /* Views */,
 				025279CA2AB93A31007CEBAD /* AppsViewController.swift */,
+				02527A002AB95716007CEBAD /* AppsViewController+Setup.swift */,
+				025279FC2AB9568E007CEBAD /* AppsViewController+Layouts.swift */,
+				025279FE2AB956C2007CEBAD /* AppsViewController+DataSource.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -252,14 +261,17 @@
 				025279CB2AB93A31007CEBAD /* AppsViewController.swift in Sources */,
 				025279ED2AB93C06007CEBAD /* SearchViewController.swift in Sources */,
 				025279E12AB93BDC007CEBAD /* App.swift in Sources */,
+				025279FD2AB9568E007CEBAD /* AppsViewController+Layouts.swift in Sources */,
 				025279EB2AB93C06007CEBAD /* FeaturedCell.swift in Sources */,
 				025279F12AB93C06007CEBAD /* SelfConfiguringCell.swift in Sources */,
 				025279EE2AB93C06007CEBAD /* SectionHeader.swift in Sources */,
+				02527A012AB95716007CEBAD /* AppsViewController+Setup.swift in Sources */,
 				025279C72AB93A31007CEBAD /* AppDelegate.swift in Sources */,
 				025279F02AB93C06007CEBAD /* GamesViewController.swift in Sources */,
 				025279EF2AB93C06007CEBAD /* MediumTableCell.swift in Sources */,
 				025279DF2AB93BD5007CEBAD /* Bundle-Decodable.swift in Sources */,
 				025279EC2AB93C06007CEBAD /* ArcadeViewController.swift in Sources */,
+				025279FF2AB956C2007CEBAD /* AppsViewController+DataSource.swift in Sources */,
 				025279F32AB93C11007CEBAD /* SmallTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
