@@ -1,14 +1,15 @@
 import UIKit
+import SwiftUI
 import Kingfisher
 
 class NewsViewController: UIViewController {
-    typealias DataSource = UICollectionViewDiffableDataSource<Int, ArticleModel.ID>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, ArticleModel.ID>
+    typealias DataSource = UICollectionViewDiffableDataSource<Int, Article.ID>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Article.ID>
     var dataSource: DataSource!
     private let store = NewsStore()
     private var bag = Bag()
 
-    var news: [ArticleModel] = [] //ArticleModel.all
+    var news: [Article] = Bundle.main.decode(ArticleResponse.self, from: "News.json").articles
     private var searchController = UISearchController(searchResultsController: nil)
     private lazy var collectionView: UICollectionView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -41,28 +42,46 @@ class NewsViewController: UIViewController {
     func cellRegistrationHandler(
         cell: UICollectionViewListCell,
         indexPath: IndexPath,
-        id: ArticleModel.ID
+        id: Article.ID
     ) {
         let item = news(withId: id)
+//        cell.contentConfiguration = UIHostingConfiguration {
+//            Image(item.source.id)
+//        }
         var contentConfigureation = cell.defaultContentConfiguration()
         contentConfigureation.text = item.title
-        contentConfigureation.image = UIImage(named: "2")
+        contentConfigureation.textProperties.font = .boldSystemFont(ofSize: 14)
+        contentConfigureation.image = UIImage(named: item.source.id)
         contentConfigureation.imageProperties.cornerRadius = 16
         contentConfigureation.imageProperties.maximumSize = CGSize(width: 100, height: 100)
-        contentConfigureation.imageToTextPadding = 20
-        contentConfigureation.secondaryText = item.description
+        contentConfigureation.imageToTextPadding = 10
+        contentConfigureation.secondaryText = item.source.name
         contentConfigureation.secondaryTextProperties.font = .preferredFont(forTextStyle: .caption1)
         cell.contentConfiguration = contentConfigureation
+
         cell.accessories = [
-//            .customView(configuration: photoConfiguration(for: item)),
+            .customView(configuration: doneButtonConfiguration()),
             .disclosureIndicator(displayed: .always)
         ]
         var backgroundConfiguration = UIBackgroundConfiguration.listGroupedCell()
-        backgroundConfiguration.backgroundColor = .systemGray2
+        backgroundConfiguration.backgroundColor = .secondarySystemBackground
         cell.backgroundConfiguration = backgroundConfiguration
+
+   }
+
+    private func doneButtonConfiguration() -> UICellAccessory.CustomViewConfiguration {
+        let symbolName = "circle"
+        let symbolConfiguration = UIImage.SymbolConfiguration(textStyle: .body)
+        let image = UIImage(systemName: symbolName, withConfiguration: symbolConfiguration)
+        let button = UIButton()
+        button.setImage(image, for: .normal)
+        return UICellAccessory.CustomViewConfiguration(
+            customView: button,
+            placement: .leading(displayed: .always)
+        )
     }
 
-    func updateSnapshot(reloading ids: [ArticleModel.ID] = []) {
+    func updateSnapshot(reloading ids: [Article.ID] = []) {
         var snapshot = Snapshot()
         snapshot.appendSections([0])
         snapshot.appendItems(news.map { $0.id })
@@ -77,17 +96,17 @@ class NewsViewController: UIViewController {
         return UICollectionViewCompositionalLayout.list(using: listConfiguration)
     }
 
-    private func news(withId id: ArticleModel.ID) -> ArticleModel {
+    private func news(withId id: Article.ID) -> Article {
         let index = news.indexOfNews(withId: id)
         return news[index]
     }
 
-    private func updateReminder(_ item: ArticleModel) {
+    private func updateReminder(_ item: Article) {
         let index = news.indexOfNews(withId: item.id)
         news[index] = item
     }
 
-    private func photoConfiguration(for item: ArticleModel) -> UICellAccessory.CustomViewConfiguration {
+    private func photoConfiguration(for item: Article) -> UICellAccessory.CustomViewConfiguration {
         let image = UIImage(named: "0")
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFill
@@ -112,7 +131,7 @@ class NewsViewController: UIViewController {
         view.addSubview(collectionView)
         let cellRegistration = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
 
-        dataSource = DataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: ArticleModel.ID) in
+        dataSource = DataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: Article.ID) in
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
         }
 
@@ -140,31 +159,6 @@ class NewsViewController: UIViewController {
                 multiplier: 2
             )
         ])
-    }
-
-    private func callAPI() {
-        Task {
-            do {
-                let result: ArticleResponse = try await RESTClient.shared.request(.search, parameters: ["domains": "wsj.com"])
-                news = result.articles.map { ArticleModel(with: $0)}
-                updateSnapshot()
-            } catch {}
-        }
-    }
-
-    private func fetchNews() {
-        Task {
-            do {
-                guard let url = URL(string: "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=9e72db7ad0a84a2597eefbb6690a48ac") else { return }
-                let (data, _) = try await URLSession.shared.data(from: url)
-                guard let result = try? JSONDecoder().decode(ArticleResponse.self, from: data)
-                else { return }
-                news = result.articles.map { ArticleModel(with: $0)}
-                updateSnapshot()
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
     }
 }
 

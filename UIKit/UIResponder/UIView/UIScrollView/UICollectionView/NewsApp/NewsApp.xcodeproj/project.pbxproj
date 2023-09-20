@@ -14,7 +14,6 @@
 		0279428F2AB9A871006FDBBF /* RESTError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0279428E2AB9A871006FDBBF /* RESTError.swift */; };
 		027942912AB9A87C006FDBBF /* RESTRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027942902AB9A87C006FDBBF /* RESTRoute.swift */; };
 		027942932AB9AB95006FDBBF /* RESTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027942922AB9AB95006FDBBF /* RESTClient.swift */; };
-		027942952AB9BC5E006FDBBF /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027942942AB9BC5E006FDBBF /* ArticleModel.swift */; };
 		027942972AB9C920006FDBBF /* News.json in Resources */ = {isa = PBXBuildFile; fileRef = 027942962AB9C920006FDBBF /* News.json */; };
 		027942992AB9CD68006FDBBF /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027942982AB9CD68006FDBBF /* Bundle-Decodable.swift */; };
 		0279429B2AB9EF53006FDBBF /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0279429A2AB9EF53006FDBBF /* Article.swift */; };
@@ -34,7 +33,6 @@
 		0279428E2AB9A871006FDBBF /* RESTError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTError.swift; sourceTree = "<group>"; };
 		027942902AB9A87C006FDBBF /* RESTRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTRoute.swift; sourceTree = "<group>"; };
 		027942922AB9AB95006FDBBF /* RESTClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTClient.swift; sourceTree = "<group>"; };
-		027942942AB9BC5E006FDBBF /* ArticleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 		027942962AB9C920006FDBBF /* News.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = News.json; sourceTree = "<group>"; };
 		027942982AB9CD68006FDBBF /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bundle-Decodable.swift"; path = "../../TapStore/TapStore/Extensions/Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		0279429A2AB9EF53006FDBBF /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 				027942922AB9AB95006FDBBF /* RESTClient.swift */,
 				0279429C2ABA047F006FDBBF /* Store.swift */,
 				0279429A2AB9EF53006FDBBF /* Article.swift */,
-				027942942AB9BC5E006FDBBF /* ArticleModel.swift */,
 				027942962AB9C920006FDBBF /* News.json */,
 				027942982AB9CD68006FDBBF /* Bundle-Decodable.swift */,
 				027942A12ABA2759006FDBBF /* MainTabBarViewController.swift */,
@@ -194,7 +191,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				027942952AB9BC5E006FDBBF /* ArticleModel.swift in Sources */,
 				0279428F2AB9A871006FDBBF /* RESTError.swift in Sources */,
 				027942A02ABA0F12006FDBBF /* NewsStore.swift in Sources */,
 				027942A22ABA2759006FDBBF /* MainTabBarViewController.swift in Sources */,
