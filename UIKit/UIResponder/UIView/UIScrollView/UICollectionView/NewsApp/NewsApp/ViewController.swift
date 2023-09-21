@@ -5,6 +5,7 @@ class ViewController: UICollectionViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         navigationItem.title = "News"
+        Article.simpleData.forEach { print($0.title)}
     }
 }
 
