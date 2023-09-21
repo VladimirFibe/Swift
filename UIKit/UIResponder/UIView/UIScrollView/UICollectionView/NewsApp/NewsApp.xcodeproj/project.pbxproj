@@ -68,7 +68,7 @@
 				022A97722ABBF91A00D6A9EA /* AppDelegate.swift */,
 				022A97742ABBF91A00D6A9EA /* SceneDelegate.swift */,
 				022A97762ABBF91A00D6A9EA /* ViewController.swift */,
-				022A97932ABC066600D6A9EA /* Article.swift */,
+				022A97952ABC0D1F00D6A9EA /* Model */,
 				022A977B2ABBF91C00D6A9EA /* Assets.xcassets */,
 				022A977D2ABBF91C00D6A9EA /* LaunchScreen.storyboard */,
 				022A97802ABBF91C00D6A9EA /* Info.plist */,
@@ -87,6 +87,14 @@
 				022A978D2ABBFCB300D6A9EA /* 06.png */,
 			);
 			path = img;
+			sourceTree = "<group>";
+		};
+		022A97952ABC0D1F00D6A9EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				022A97932ABC066600D6A9EA /* Article.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
