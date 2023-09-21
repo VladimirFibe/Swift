@@ -27,6 +27,8 @@
 		022A97862ABBFA4D00D6A9EA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		022A97882ABBFA7700D6A9EA /* 01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01.png; sourceTree = "<group>"; };
 		022A97892ABBFA9900D6A9EA /* 02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 02.png; sourceTree = "<group>"; };
+		022A978A2ABBFB1700D6A9EA /* 03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 03.png; sourceTree = "<group>"; };
+		022A978B2ABBFB3A00D6A9EA /* 04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 04.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,8 @@
 			children = (
 				022A97882ABBFA7700D6A9EA /* 01.png */,
 				022A97892ABBFA9900D6A9EA /* 02.png */,
+				022A978A2ABBFB1700D6A9EA /* 03.png */,
+				022A978B2ABBFB3A00D6A9EA /* 04.png */,
 			);
 			path = img;
 			sourceTree = "<group>";
