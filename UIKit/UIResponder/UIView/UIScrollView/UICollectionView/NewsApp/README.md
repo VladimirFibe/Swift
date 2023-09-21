@@ -13,8 +13,21 @@
 
 ![](img/05.png)
 
+![](img/06.png)
+
 добавил картинки
 
 [Model/Article.swift](https://raw.githubusercontent.com/VladimirFibe/Swift/main/UIKit/UIResponder/UIView/UIScrollView/UICollectionView/NewsApp/NewsApp/Model/Article.swift)
 
-![](img/06.png)
+
+![](img/07.png)
+
+![](img/08.png)
+
+![](img/09.png)
+
+![](img/10.png)
+
+![](img/11.png)
+
+![](img/12.png)

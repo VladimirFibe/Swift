@@ -17,7 +17,7 @@ struct Article {
 
 #if DEBUG
 extension Article {
-    static var simpleData: [Article] = [
+    static var sampleData: [Article] = [
         .init(source: .init(id: "0", name: "Lifehacker.com"),
               author: "Pranay Parab",
               title: "The Best New Keyboard Features in iOS 17",

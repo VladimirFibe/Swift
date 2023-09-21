@@ -13,6 +13,8 @@
 		022A977C2ABBF91C00D6A9EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 022A977B2ABBF91C00D6A9EA /* Assets.xcassets */; };
 		022A977F2ABBF91C00D6A9EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 022A977D2ABBF91C00D6A9EA /* LaunchScreen.storyboard */; };
 		022A97942ABC066600D6A9EA /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A97932ABC066600D6A9EA /* Article.swift */; };
+		022A97972ABC0E7700D6A9EA /* 07.png in Resources */ = {isa = PBXBuildFile; fileRef = 022A97962ABC0E7700D6A9EA /* 07.png */; };
+		022A97992ABC10A200D6A9EA /* 08.png in Resources */ = {isa = PBXBuildFile; fileRef = 022A97982ABC10A100D6A9EA /* 08.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		022A97912ABC04FD00D6A9EA /* 04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 04.png; sourceTree = "<group>"; };
 		022A97922ABC052C00D6A9EA /* 03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 03.png; sourceTree = "<group>"; };
 		022A97932ABC066600D6A9EA /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		022A97962ABC0E7700D6A9EA /* 07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 07.png; sourceTree = "<group>"; };
+		022A97982ABC10A100D6A9EA /* 08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 08.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 				022A97912ABC04FD00D6A9EA /* 04.png */,
 				022A978C2ABBFC7700D6A9EA /* 05.png */,
 				022A978D2ABBFCB300D6A9EA /* 06.png */,
+				022A97962ABC0E7700D6A9EA /* 07.png */,
+				022A97982ABC10A100D6A9EA /* 08.png */,
 			);
 			path = img;
 			sourceTree = "<group>";
@@ -155,6 +161,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				022A97972ABC0E7700D6A9EA /* 07.png in Resources */,
+				022A97992ABC10A200D6A9EA /* 08.png in Resources */,
 				022A977F2ABBF91C00D6A9EA /* LaunchScreen.storyboard in Resources */,
 				022A977C2ABBF91C00D6A9EA /* Assets.xcassets in Resources */,
 			);
